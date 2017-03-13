@@ -1,0 +1,215 @@
+﻿
+.bodyLogin {
+    background: url(../img/tela_login.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-left: 20px;
+}
+
+.inputlogin {
+  
+}
+
+.box {
+        margin: 0px auto;
+        width: 70%;
+    }
+
+.box-chartEstado {
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+.formlogin {
+  font-family:sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #454242;
+  max-width: 350px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
+.fonte_01 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.fonte_02 {
+  font-family: sans-serif;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.fonte_03 {
+  font-family: sans-serif;
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.fonte_04 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #e71f27;
+  font-weight: bold;
+}
+
+.fonte_05 {
+  font-family: sans-serif;
+  font-size: 11px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.fonte_06 {
+  font-family: sans-serif;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.fonte_07 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #000000;
+  font-weight: normal;
+}
+
+.fonte_08 {
+  font-family: sans-serif;
+  font-size: 17px;
+  color: #e71f27;
+  font-weight: bold;
+}
+
+.fonte_09 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #454242;
+  font-weight: bold;
+}
+
+.fonte_10 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.fonte_11 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.fonte_12 {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+
+.cor_fundo_01 {
+  background-color: #e6e6e6;
+}
+
+.cor_fundo_02 {
+  background-color: #454242;
+}
+
+.cor_fundo_03 {
+  background-color: #6c1d6b;
+}
+
+.cor_fundo_04 {
+  background-color: #90278e;
+}
+
+.cor_fundo_05 {
+  background-color: #e71f27;
+}
+
+
+.margem_01 {
+  margin-top: 40px;
+}
+
+.margem_02 {
+  margin-top: 30px;
+}
+
+.margem_03 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.margem_04 {
+  margin-bottom: 3px;
+}
+
+.margem_05 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.margem_06 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.margem_07 {
+  margin-top: 45px;
+}
+
+.margem_08 {
+  margin-top: 10px;
+}
+
+.margem_09 {
+  margin-left: 0px;
+}
+
+.margem_10 {
+  margin-bottom: 50px;
+}
+
+.margem_11 {
+  margin-top: 78px;
+}
+
+.margem_12 {
+  margin-top: 27px;
+}
+
+.margem_13 {
+  margin-top: 27px;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/

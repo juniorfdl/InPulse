@@ -1,0 +1,109 @@
+﻿<luar-crud crud="ctrl" title="Dashboard">
+
+    <luar-main-form>
+        <a href="#" ng-click="ctrl.mostrarFiltros = !ctrl.mostrarFiltros">Mostrar filtros</a>
+        <div class="row" ng-show="ctrl.mostrarFiltros">
+
+            <luar-textdata container-class="col-md-2" label="Data Inicial"
+                           name="datainicial" ng-model="ctrl.DATAINICIAL">
+            </luar-textdata>
+
+            <luar-textdata container-class="col-md-2" label="Data Final"
+                           name="datafinal" ng-model="ctrl.DATAFINAL">
+            </luar-textdata>
+
+            <luar-text container-class="col-md-2" type="number" label="Operadores Por Página"
+                           name="datafinal" ng-model="ctrl.ITENS_POR_PAGINA">
+            </luar-text>
+
+            <luar-text container-class="col-md-2" type="number" label="Intervalo Atualização(Min)"
+                       name="datafinal" ng-model="ctrl.TEMPO_ATUALIZACAO_MIN">
+            </luar-text>
+        </div>
+
+        <div class="row col-md-3 ng-scope" ng-show="ctrl.mostrarFiltros">
+            <span>
+                <button type="submit" class="btn btn-default" ng-click="ctrl.BuscarDados()" ng-disabled="ctrl.DATAINICIAL == null || ctrl.DATAFINAL == null">
+                    <span class="glyphicon glyphicon-search"></span><span class="desktop-only"> Buscar</span>
+                </button>
+            </span>
+
+        </div>
+        <timer id="timerTempo" interval="1000" ng-show="false"></timer>
+        <timer id="timerDados" interval="ctrl.GetTEMPO_ATUALIZACAO_MIN()" ng-show="false"></timer>
+
+    </luar-main-form>
+
+    <div class="panel panel-default">
+        <!--<div class="panel-heading text-center"><h3>Dashboard</h3> </div>-->
+        <table class="table table-condensed">
+            <thead>
+                <tr style="background-color:aqua">
+                    <th></th>
+                    <th></th>
+                    <th>Operadores</th>
+                    <th></th>
+                    <th>Status Atual</th>
+                    <th>Tempo Atual</th>
+                    <th>% Produtividade</th>
+                    <th>Pedidos</th>
+                    <th>Ligações</th>
+                    <th>Contatos</th>
+                    <th>% Aproveitamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in ctrl.lista track by item.NOME">
+                    <td><img src={{"../../img/"+item.STATUS_ATUAL+"cor.png"}} height=15 width=15 /></td>
+                    <td><img src={{"../../img/"+item.FOTO}} ng-show="item.FOTO != null" height=40 width=40 /></td>
+                    <td>{{ item.NOME }}</td>
+                    <td><img src={{"../../img/"+item.STATUS_ATUAL+".png"}} height=20 width=20 /></td>
+                    <td>{{ item.STATUS_ATUAL }}</td>
+                    <td style="text-align-last:center">{{item.TEMPO_CALC}}</td>
+                    <td style="text-align-last:center">{{item.PRODUTIVIDADE | currency:'':2}}</td>
+                    <td style="text-align-last:center">{{ item.PEDIDOS }}</td>
+                    <td style="text-align-last:center">{{ item.LIGACOES }}</td>
+                    <td style="text-align-last:center">{{ item.CONTATOS }}</td>
+                    <td style="text-align-last:center">{{ item.APROVEITAMENTO | currency:'':2 }}</td>
+                </tr>
+            </tbody>
+            <!--<tfoot>
+                <tr>
+                    <td class="responsive-omit-title" colspan="6">
+                        <button class="btn btn-primary btn-xs" ng-click="ctrl.anexoEdificio.incluirAnexo(ctrl.currentRecord.anexo, anexo)"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
+                    </td>
+                </tr>
+            </tfoot>-->
+        </table>
+        <pagination total-items="ctrl.lista.$totalCount" ng-model="ctrl.paginaAtual" items-per-page="ctrl.lista.$pageSize"
+                    class="pagination-sm hidden-print" boundary-links="true" max-size="5" rotate="false"></pagination>
+    </div>
+
+    <div class="box box-chartEstado" ng-show="ctrl.estados != null && ctrl.estados.length > 0">
+        <canvas id="GraficoBarra" style="width:100%;"></canvas>
+    </div>
+
+    <div class="box box-chartEstado" ng-show="ctrl.MetasXVendasOPE != null && ctrl.MetasXVendasOPE.length > 0">
+        <canvas id="GraficoMetasXVendas" style="width:100%;"></canvas>
+        <div style="text-align-last:center">
+            <img src="../../img/Meta.png" height=15 width=15 /> Meta -
+            <img src="../../img/Azul.png" height=15 width=15 /> Vendas
+        </div>
+    </div>
+
+    <div class="box box-chartEstado" ng-show="ctrl.PropostaXVendasOPE != null && ctrl.PropostaXVendasOPE.length > 0">
+        <canvas id="GraficoPropostaXVendas" style="width:100%;"></canvas>
+        <div style="text-align-last:center">
+            <img src="../../img/Meta.png" height=15 width=15 /> Proposta -
+            <img src="../../img/Azul.png" height=15 width=15 /> Vendas
+        </div>
+    </div>
+
+
+
+</luar-crud>
+
+
+
+
+
