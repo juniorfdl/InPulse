@@ -15,7 +15,6 @@ namespace Models
         [Column("OPERADOR")]      
         public int id { get; set; }
         public byte[] FOTO { get; set; }
-        public string EXTENSAO { get; set; } 
         
     }
 }
