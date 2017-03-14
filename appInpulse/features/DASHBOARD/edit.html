@@ -6,18 +6,18 @@
 
             <luar-textdata container-class="col-md-2" label="Data Inicial"
                            name="datainicial" ng-model="ctrl.DATAINICIAL">
-            </luar-textdata>
+            </luar-textdata>            
 
             <luar-textdata container-class="col-md-2" label="Data Final"
                            name="datafinal" ng-model="ctrl.DATAFINAL">
             </luar-textdata>
 
             <luar-text container-class="col-md-2" type="number" label="Operadores Por Página"
-                           name="datafinal" ng-model="ctrl.ITENS_POR_PAGINA">
+                           name="datafinal" ng-model="ctrl.ITENS_POR_PAGINA" >
             </luar-text>
 
             <luar-text container-class="col-md-2" type="number" label="Intervalo Atualização(Min)"
-                       name="datafinal" ng-model="ctrl.TEMPO_ATUALIZACAO_MIN">
+                       name="datafinal" ng-model="ctrl.TEMPO_ATUALIZACAO_MIN" >
             </luar-text>
         </div>
 
@@ -67,13 +67,7 @@
                     <td style="text-align-last:center">{{ item.APROVEITAMENTO | currency:'':2 }}</td>
                 </tr>
             </tbody>
-            <!--<tfoot>
-                <tr>
-                    <td class="responsive-omit-title" colspan="6">
-                        <button class="btn btn-primary btn-xs" ng-click="ctrl.anexoEdificio.incluirAnexo(ctrl.currentRecord.anexo, anexo)"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
-                    </td>
-                </tr>
-            </tfoot>-->
+           
         </table>
         <pagination total-items="ctrl.lista.$totalCount" ng-model="ctrl.paginaAtual" items-per-page="ctrl.lista.$pageSize"
                     class="pagination-sm hidden-print" boundary-links="true" max-size="5" rotate="false"></pagination>

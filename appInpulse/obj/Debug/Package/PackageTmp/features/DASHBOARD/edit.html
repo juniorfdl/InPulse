@@ -6,11 +6,19 @@
 
             <luar-textdata container-class="col-md-2" label="Data Inicial"
                            name="datainicial" ng-model="ctrl.DATAINICIAL">
-            </luar-textdata>
+            </luar-textdata>            
 
             <luar-textdata container-class="col-md-2" label="Data Final"
                            name="datafinal" ng-model="ctrl.DATAFINAL">
             </luar-textdata>
+
+            <luar-text container-class="col-md-2" type="number" label="Operadores Por Página"
+                           name="datafinal" ng-model="ctrl.ITENS_POR_PAGINA" >
+            </luar-text>
+
+            <luar-text container-class="col-md-2" type="number" label="Intervalo Atualização(Min)"
+                       name="datafinal" ng-model="ctrl.TEMPO_ATUALIZACAO_MIN" >
+            </luar-text>
         </div>
 
         <div class="row col-md-3 ng-scope" ng-show="ctrl.mostrarFiltros">
@@ -22,7 +30,7 @@
 
         </div>
         <timer id="timerTempo" interval="1000" ng-show="false"></timer>
-        <timer id="timerDados" interval="10000" ng-show="false"></timer>
+        <timer id="timerDados" interval="ctrl.GetTEMPO_ATUALIZACAO_MIN()" ng-show="false"></timer>
 
     </luar-main-form>
 
@@ -59,13 +67,7 @@
                     <td style="text-align-last:center">{{ item.APROVEITAMENTO | currency:'':2 }}</td>
                 </tr>
             </tbody>
-            <!--<tfoot>
-                <tr>
-                    <td class="responsive-omit-title" colspan="6">
-                        <button class="btn btn-primary btn-xs" ng-click="ctrl.anexoEdificio.incluirAnexo(ctrl.currentRecord.anexo, anexo)"><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
-                    </td>
-                </tr>
-            </tfoot>-->
+           
         </table>
         <pagination total-items="ctrl.lista.$totalCount" ng-model="ctrl.paginaAtual" items-per-page="ctrl.lista.$pageSize"
                     class="pagination-sm hidden-print" boundary-links="true" max-size="5" rotate="false"></pagination>
@@ -79,6 +81,14 @@
         <canvas id="GraficoMetasXVendas" style="width:100%;"></canvas>
         <div style="text-align-last:center">
             <img src="../../img/Meta.png" height=15 width=15 /> Meta -
+            <img src="../../img/Azul.png" height=15 width=15 /> Vendas
+        </div>
+    </div>
+
+    <div class="box box-chartEstado" ng-show="ctrl.PropostaXVendasOPE != null && ctrl.PropostaXVendasOPE.length > 0">
+        <canvas id="GraficoPropostaXVendas" style="width:100%;"></canvas>
+        <div style="text-align-last:center">
+            <img src="../../img/Meta.png" height=15 width=15 /> Proposta -
             <img src="../../img/Azul.png" height=15 width=15 /> Vendas
         </div>
     </div>

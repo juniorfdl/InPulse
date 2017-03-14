@@ -76,6 +76,7 @@ var App;
         }
         function Text($compile) {
             return {
+                require: ['?ngModel'],
                 restrict: 'EA',
                 priority: FIELDS_PRIORITY,
                 terminal: true,
@@ -126,6 +127,7 @@ var App;
 
         function TextData($compile) {
             return {
+                require: ['?ngModel'],
                 restrict: 'EA',
                 priority: FIELDS_PRIORITY,
                 terminal: true,
@@ -139,6 +141,7 @@ var App;
                 },
                 replace: true,
                 compile: function (element, attrs) {
+                    debugger;
                     replaceAttr(element, attrs, 'input');
                     return function postLink(scope, element, attrs) {
                         var messagesEl = setupErrors(element, attrs);

@@ -324,6 +324,7 @@
     <Content Include="Scripts\Angular\angular-smart-forms.js" />
     <Content Include="Scripts\Angular\angular-timer-all.min.js" />
     <Content Include="Scripts\Angular\angular-ui-router.js" />
+    <Content Include="Scripts\Angular\angular-ui-router.min.js" />
     <Content Include="Scripts\Angular\angular-wt-apps.js" />
     <Content Include="Scripts\Angular\angular.js" />
     <Content Include="Scripts\Angular\angular.min.js" />
@@ -349,7 +350,6 @@
     <Content Include="Scripts\Base\backButton.js" />
     <Content Include="Scripts\Base\base.js" />
     <Content Include="Scripts\Base\basics.js" />
-    <Content Include="Scripts\Base\common.js" />
     <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\SIS\config.js" />
     <Content Include="Scripts\Base\ConstConf.js" />

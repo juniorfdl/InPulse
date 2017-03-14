@@ -22,8 +22,8 @@
             controller: 'CrudDashboardCtrl',
             controllerAs: 'ctrl',
             resolve: {
-                lista: function (CrudDashboardService) {                     
-                    return CrudDashboardService.buscar('', 1, 'NOME', true, 5, '');                       
+                lista: function (CrudDashboardService) {
+                    return CrudDashboardService.buscar('', 1, 'NOME', true, localStorage.OperadoresPorPagina, '');
                 }
             }
         }).state("otherwise",

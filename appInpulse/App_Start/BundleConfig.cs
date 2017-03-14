@@ -32,7 +32,8 @@ namespace appBase
                 "~/scripts/angular/angular-aria.js",
                 "~/scripts/angular/angular-timer-all.min.js",
                 "~/scripts/angular/svg-assets-cache.js",
-                "~/scripts/angular/ui-bootstrap-tpls.js"));
+                "~/scripts/angular/ui-bootstrap-tpls.js"                
+                ));
 
             bundles.Add(new ScriptBundle("~/js/app").Include(
                 "~/scripts/Base/sweetalert.min.js",
