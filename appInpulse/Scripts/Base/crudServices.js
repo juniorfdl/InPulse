@@ -78,7 +78,6 @@ var App;
              */
             CrudBaseService.prototype.buscar = function (termoDePesquisa, pagina, campoOrdenacao, direcaoAsc, itensPorPagina, campoPesquisa) {
                 var _this = this;
-                debugger;
                 if (_this.$rootScope != null)
                     _this.$rootScope.Cadastro = false;
 

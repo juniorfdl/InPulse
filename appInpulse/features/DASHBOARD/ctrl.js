@@ -283,10 +283,12 @@ var App;
                     if (Tempo != null) {
                         try {
                             var now = new Date();
-                            _this.hora = now.getTime();
-                            Tempo = "Thu Mar 09 2017 " + Tempo + " GMT-0300";
-                            var t = Date.parse(Tempo);
-                            var diff = _this.hora - t;
+                            var hora = now.getTime();
+                            var Dia = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
+                                Tempo.substring(0, 2), Tempo.substring(3, 5), Tempo.substring(6, 8), "01");
+
+                            var t = Date.parse(Dia);
+                            var diff = hora - t;
                             var msec = diff;
                             var hh = Math.floor(msec / 1000 / 60 / 60);
                             msec -= hh * 1000 * 60 * 60;
