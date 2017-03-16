@@ -54,10 +54,10 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in ctrl.lista track by item.NOME">
-                    <td><img src={{"../../img/"+item.STATUS_ATUAL+"cor.png"}} height=15 width=15 /></td>
-                    <td><img src={{"../../img/"+item.FOTO}} ng-show="item.FOTO != null" height=40 width=40 /></td>
+                    <td><img src={{"img/"+item.STATUS_ATUAL+"cor.png"}} height=15 width=15 /></td>
+                    <td><img src={{"img/"+item.FOTO}} ng-show="item.FOTO != null" height=40 width=40 /></td>
                     <td>{{ item.NOME }}</td>
-                    <td><img src={{"../../img/"+item.STATUS_ATUAL+".png"}} height=20 width=20 /></td>
+                    <td><img src={{"img/"+item.STATUS_ATUAL+".png"}} height=20 width=20 /></td>
                     <td>{{ item.STATUS_ATUAL }}</td>
                     <td style="text-align-last:center">{{item.TEMPO_CALC}}</td>
                     <td style="text-align-last:center">{{item.PRODUTIVIDADE | currency:'':2}}</td>

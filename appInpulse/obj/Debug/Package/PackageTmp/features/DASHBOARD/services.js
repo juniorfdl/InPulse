@@ -18,6 +18,7 @@ var App;
                 _super.apply(this, arguments);
 
                 this.BuscarDados = function (DATAINICIAL, DATAFINAL) {
+                    debugger;
                     var params = { DATAINICIAL: DATAINICIAL, DATAFINAL: DATAFINAL };
                     return this.api.allLook(params, 'dashboard/localizar');
                 }

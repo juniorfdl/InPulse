@@ -14,8 +14,8 @@ var App;
             __extends(CrudDashboardCtrl, _super);
             function CrudDashboardCtrl($rootScope, api, CrudDashboardService, lista, $q, $scope) {
                 var _this = this;
-                _super.call(this);                              
-                
+                _super.call(this);
+
                 this.GraficoVendasPorEstado = function () {
                     _this.estados = [];
                     _this.estadosvalor = [];
@@ -229,7 +229,7 @@ var App;
 
                 this.Pesquisar = function () {
                     this.mostrarFiltros = false;
-                }                
+                }
 
                 this.BuscarDados = function () {
 
@@ -241,9 +241,10 @@ var App;
 
                     this.GetOperadoresPorPagina();
 
-                    this.crudSvc.BuscarDados(this.DATAINICIAL, this.DATAFINAL).then(function (dados) {                        
+                    this.crudSvc.BuscarDados(this.DATAINICIAL, this.DATAFINAL).then(function (dados) {
                         var VendasPorEstado = null;
                         var MetasXVendas = null;
+                        debugger;
 
                         for (var i in dados) {
                             var ii = _this.lista.filter(x => x.id == dados[i].id);
@@ -266,10 +267,19 @@ var App;
                                 if (dados[i].VendasPorEstado != null) {
                                     VendasPorEstado = dados[i].VendasPorEstado;
                                 }
+                            } else {
+                                debugger;
+                                _this.lista.push(dados[i]);
+                                if (_this.lista.$totalCount != null) {
+                                    _this.lista.$totalCount = _this.lista.$totalCount + 1;
+                                }
+
                             }
 
-                            _this.lista[0].MetasXVendas = MetasXVendas;
-                            _this.lista[0].VendasPorEstado = VendasPorEstado;
+                            if (MetasXVendas != null)
+                                _this.lista[0].MetasXVendas = MetasXVendas;
+                            if (VendasPorEstado != null)
+                                _this.lista[0].VendasPorEstado = VendasPorEstado;
                         }
 
                         _this.mostrarFiltros = false;
@@ -277,7 +287,7 @@ var App;
                         _this.GraficoMetasXVendas();
                         _this.GraficoPropostaXVendas();
                     });
-                }               
+                }
 
                 this.GetTempo = function (Tempo) {
                     if (Tempo != null) {
@@ -329,7 +339,7 @@ var App;
                 this.pad2 = function (number) {
                     return (number < 10 ? '0' : '') + number
                 }
-                
+
                 this.GetTEMPO_ATUALIZACAO_MIN = function () {
 
                     if (this.TEMPO_ATUALIZACAO_MIN == null || this.TEMPO_ATUALIZACAO_MIN < 5) {

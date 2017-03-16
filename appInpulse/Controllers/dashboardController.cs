@@ -60,6 +60,8 @@
 
             }
 
+            dblocal.Database.Connection.Close();
+
             return query;
         }
 
@@ -226,7 +228,6 @@
                 }
 
             }
-
         }
 
         [Route("api/dashboard/localizar")]
@@ -239,7 +240,11 @@
             foreach (var item in ope)
             {
                 i++;
-                GetValores(item.id, filtros.DATAINICIAL, filtros.DATAFINAL);
+                if (filtros != null)
+                    GetValores(item.id, filtros.DATAINICIAL, filtros.DATAFINAL);
+                else
+                    GetValores(item.id, null, null);
+
                 item.APROVEITAMENTO = APROVEITAMENTO;
                 item.CONTATOS = CONTATOS;
                 item.LIGACOES = DISCADAS;
@@ -252,8 +257,6 @@
                     item.MetasXVendas = MetasXVendas;
                 }
 
-
-
                 var foto = dblocal.Set<operadores_foto>().Where(q => q.id == item.id).FirstOrDefault();
 
                 if (foto != null)
@@ -264,6 +267,8 @@
                     f.Save(diretorio);
                 }
             }
+
+            dblocal.Database.Connection.Close();
 
             if (ope == null)
             {
