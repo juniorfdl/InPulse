@@ -27,6 +27,13 @@
         private dynamic VendasPorEstado;
         private dynamic MetasXVendas;
 
+        //public dashboardController()
+        //{
+        //    ControllerBaseIP IP = new ControllerBaseIP();
+        //    var x = IP.GetClientIp(this.Request);
+        //    x = "";
+        //}
+
         protected override IOrderedQueryable<v_operadores_status> Ordenar(IQueryable<v_operadores_status> query)
         {
             return query.OrderBy(e => e.NOME);
@@ -43,7 +50,7 @@
                 if (foto != null)
                 {
                     var diretorio = HttpContext.Current.Server.MapPath("~") + @"\img\" + item.id.ToString() + ".png";
-                    item.FOTO = "../../img/" + item.id.ToString() + ".png";
+                    item.FOTO = item.id.ToString() + ".png";
                     var f = byteArrayToImage(foto.FOTO);
                     f.Save(diretorio);
                 }
@@ -262,7 +269,7 @@
                 if (foto != null)
                 {
                     var diretorio = HttpContext.Current.Server.MapPath("~") + @"\img\" + item.id.ToString() + ".png";
-                    item.FOTO = "../../img/" + item.id.ToString() + ".png";
+                    item.FOTO =  item.id.ToString() + ".png";
                     var f = byteArrayToImage(foto.FOTO);
                     f.Save(diretorio);
                 }

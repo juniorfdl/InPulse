@@ -58,7 +58,9 @@ namespace appBase
                 "~/scripts/Chart.min.js",
                 "~/features/LOGIN/ctrl.js",
                 "~/features/DASHBOARD/ctrl.js",
-                "~/features/DASHBOARD/services.js"
+                "~/features/DASHBOARD/services.js",
+                "~/features/Ativo/ctrl.js",
+                "~/features/Ativo/services.js"
                 ));
         }
     }

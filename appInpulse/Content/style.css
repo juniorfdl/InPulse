@@ -23,9 +23,21 @@ h2 {
 
 }
 
-html, body {
-    height: 100%;    
+html {
+    height: 100%;      
+    
 }
+
+body {
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    /* line-height: 1.42857143; */
+    color: #333;
+    background-color: #fff;   
+   
+}
+
 
 a {
     cursor: pointer;
@@ -68,7 +80,7 @@ a {
 
 .form-inline .input-group {
     display: inline-table;
-    vertical-align: top;
+    vertical-align: central;
 }
 
 /* tabelas */
@@ -349,10 +361,13 @@ div[required] .control-label::before {
 
 .form-control {
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   /*height: auto;
   padding: 10px;*/
-  margin-bottom: 7px;
+  margin-bottom: 0px;
+  padding-right: 5px;
+  padding-left: 5px;
+  height: 30px;
 }
 
 textarea {
@@ -360,11 +375,23 @@ textarea {
 }
 
 
-label {
+/*label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 0px; 
     font-weight: bold;
+}*/
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    /* margin-bottom: 5px; */
+    font-weight: 700;
+    margin-bottom:0;
+}
+
+.form-group {
+     margin-bottom: 0px; 
 }
 
 select { 
@@ -374,7 +401,8 @@ select {
 }
 
 input [type="text"] { 
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

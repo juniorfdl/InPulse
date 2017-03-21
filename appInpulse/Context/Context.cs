@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Models;
+using System.Net.Http;
+using System.Web;
+using System.Web.Http;
 
 namespace Infra.Base
 {
@@ -16,8 +19,11 @@ namespace Infra.Base
         {
             Database.SetInitializer<Context>(null);
             Database.Initialize(false);
-        }
+            //var ip = GetUserIp();
+                       
 
+        }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

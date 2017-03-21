@@ -9,7 +9,7 @@
             this.Empresas = false;
             var _this = this;
             _this.EmpresaSelecionada = { CEMP: "" };
-            this.NivelLook = [{ NIVEL: 'ATIVO'}, {NIVEL: 'RECEPTIVO'}, {NIVEL: 'ADMIN' }];                      
+            this.NivelLook = [{ NIVEL: 'ATIVO' }, { NIVEL: 'RECEPTIVO' }, { NIVEL: 'ADMIN' }];
 
             $rootScope.cssLogin = 'bodyLogin';
 
@@ -26,7 +26,12 @@
 
                         $rootScope.cssLogin = '';
                         _this.loginOK();
-                        $location.path('/home');
+
+                        if (_this.Nivel == "ATIVO") {
+                            $location.path('/Ativo');
+                        } else {
+                            $location.path('/home');
+                        }
                         toaster.clear();
 
                     }, function (error) {

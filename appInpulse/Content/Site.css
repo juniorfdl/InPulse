@@ -21,7 +21,8 @@
         width: 90%;
         margin: 0 auto;
         padding: 10px;
-    }
+    }
+
 
 .formlogin {
   font-family:sans-serif;
@@ -76,6 +77,7 @@
   font-family: sans-serif;
   color: #ffffff;
   font-weight: normal;
+  font-size: 11px;
 }
 
 .fonte_07 {
@@ -161,6 +163,7 @@
 .margem_05 {
   margin-top: 5px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .margem_06 {

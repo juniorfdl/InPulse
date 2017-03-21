@@ -16,6 +16,15 @@
             data: {
                 title: "Entrar"
             }
+        }).state('Ativo', {
+            url: '/Ativo',
+            layout: 'basic',
+            templateUrl: 'features/Ativo/edit.html',
+            controller: 'CrudAtivoCtrl',
+            controllerAs: 'ctrl',
+            data: {
+                title: "Ativo"
+            }
         }).state('dashboard', {
             url: '',
             templateUrl: 'features/DASHBOARD/edit.html',

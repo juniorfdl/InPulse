@@ -4,14 +4,17 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
+    using System.Net.Http;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Web;
     using System.Web.Http;
+    using System.ServiceModel.Channels;
 
     public abstract class ControllerBase : ApiController
-    {
+    {        
         public Context db = new Context();
-
+        
         protected void AtualizarRelacionamento<TRaiz, TEntidade>(TRaiz item, ICollection<TEntidade> lista, Func<TEntidade, int> fkListaParaItem)
             where TRaiz : IEntidadeBase
             where TEntidade : class, IEntidadeBase
