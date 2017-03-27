@@ -19,11 +19,9 @@ namespace Infra.Base
         {
             Database.SetInitializer<Context>(null);
             Database.Initialize(false);
-            //var ip = GetUserIp();
-                       
+            //var ip = GetUserIp();  
+        }       
 
-        }
-        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

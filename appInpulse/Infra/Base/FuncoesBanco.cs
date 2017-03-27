@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Data.Common;
+    using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Dynamic;
     using System.Linq;
@@ -12,9 +13,9 @@
 
     public class FuncoesBanco
     {
-        private Context db;
+        private DbContext db;
 
-        public FuncoesBanco(Context db)
+        public FuncoesBanco(DbContext db)
         {
             //this.db = (FbConnection) db.Database.Connection;
 
@@ -93,7 +94,7 @@
             }
 
             return codigo;
-        }
+        }        
 
     }
 }
