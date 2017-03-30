@@ -32,7 +32,23 @@
             retorno.id = id;
             GetParamOperador();
             GetProximaLigacao();
+            GetDadosLigacao(retorno.CODIGO);
+
             return Json(retorno);
+        }
+
+        private void GetDadosLigacao(int codigo)
+        {
+            var x = "SELECT a.CODIGO, a.FONE1, coalesce(a.DESC_FONE1, c.DESC_FONE1) as DESC_FONE1, "
+               + " coalesce(a.DESC_FONE2, c.DESC_FONE2) as DESC_FONE2, coalesce(a.DESC_FONE3, c.DESC_FONE3) as DESC_FONE3, "
+               + " a.FONE2, a.FONE3, a.CLIENTE, a.OPERADOR, a.CAMPANHA, a.DT_AGENDAMENTO, a.OPERADOR_LIGACAO, a.AGENDA, a.ORDEM, "
+               + " b.PRIORIDADE, b.PAUSADA, c.ESTADO FROM campanhas_clientes a inner join campanhas b on b.CODIGO = a.CAMPANHA "
+               + " inner join clientes c on c.CODIGO = a.CLIENTE WHERE a.CODIGO = " + codigo.ToString();
+
+            List<dynamic> MyList = funcdb.CollectionFromSql(x,
+               new Dictionary<string, object> { }).ToList();
+
+            retorno.dadosLigacao = MyList;
         }
 
         private void GetProximaLigacao()
@@ -195,12 +211,12 @@
             }
 
             dados = funcdb.ExecSql("SELECT GROUP_CONCAT(ESTADO) FROM estados_operadores WHERE OPERADOR = " + retorno.id.ToString());
-            
+
             if (dados.Count > 0 && dados[0] != null)
             {
                 FiltroEstado = dados[0].ToString().Replace(",", "','");
                 FiltroEstado = " AND c_.ESTADO IN  (" + FiltroEstado + ") ";
-            }            
+            }
         }
     }
 }

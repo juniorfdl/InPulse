@@ -15,7 +15,13 @@ var App;
             __extends(CrudAtivoService, _super);
 
             function CrudAtivoService($q, api) {
-                _super.apply(this, arguments);                
+                _super.apply(this, arguments);
+
+                this.GetProximaLigacao = function (operador) {
+                    debugger;
+                    return this.api.allLook(null, 'ativo/localizar/' + operador);
+                };
+
             }
 
             Object.defineProperty(CrudAtivoService.prototype, "baseEntity", {

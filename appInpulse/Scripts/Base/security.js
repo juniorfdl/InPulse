@@ -35,6 +35,7 @@ var App;
                         catch (e) {
                         }
 
+                        debugger;
                         service.currentUser = response;
                         $rootScope.currentUser = service.currentUser;
                         $rootScope.$emit("security:login");
@@ -58,6 +59,7 @@ var App;
                     // the profile from the current cookie
                     var request = $http.get('api/account/profile');
                     return request.success(function (response) {
+                        debugger;
                         service.currentUser = response;
                     });
                 },

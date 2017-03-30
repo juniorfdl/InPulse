@@ -54,6 +54,7 @@ var App;
             }
             else {
                 security.login(loginusr, loginpass).then(function () {
+                    debugger;
                     $rootScope.currentUser.userEmpresa = localStorage.getItem("userEmpresa");
                     $rootScope.currentUser.userCEMP = localStorage.getItem("userCEMP");
                     $rootScope.currentUser.CODIGOSISUSUARIO = localStorage.getItem("CODIGOSISUSUARIO");

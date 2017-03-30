@@ -14,7 +14,14 @@ var App;
             __extends(CrudAtivoCtrl, _super);
             function CrudAtivoCtrl($rootScope, api, CrudAtivoService, $q, $scope) {
                 var _this = this;
+                var _rootScope = $rootScope;
                 _super.call(this);
+
+                this.GetProximaLigacao = function () {
+                    this.crudSvc.GetProximaLigacao($rootScope.currentUser.id).then(function (dados) {
+                        _this.dadosLigacao = dados;
+                    });
+                }
 
                 ExecutaStart();
                 function ExecutaStart() {
@@ -23,7 +30,11 @@ var App;
                     _this.crudSvc = CrudAtivoService;
                     //_this.lista = lista;
                     _this.ApenasConsulta = true;
-                }                
+                    _this.GetProximaLigacao();
+                }
+
+                
+
             }
 
             CrudAtivoCtrl.prototype.crud = function () {
@@ -39,7 +50,6 @@ var App;
         Controllers.CrudAtivoCtrl = CrudAtivoCtrl;
 
         App.modules.Controllers.controller('CrudAtivoCtrl', CrudAtivoCtrl);
-
 
     })(Controllers = App.Controllers || (App.Controllers = {}));
 })(App || (App = {}));
